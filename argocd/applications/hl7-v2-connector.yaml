@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hl7-v2-connector
+  namespace: argocd
+spec:
+  project: health
+  source:
+    repoURL: git@github.com:lilianasacorreia/hl7-v2-connector.git
+    path: helm/hl7-v2-connector
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: datacluster
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

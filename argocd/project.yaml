@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: health
+  namespace: argocd
+spec:
+  description: Health Data Platform Project
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: datacluster
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'

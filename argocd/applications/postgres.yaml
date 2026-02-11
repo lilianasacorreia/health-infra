@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgres
+  namespace: argocd
+spec:
+  project: health
+  source:
+    repoURL: git@github.com:lilianasacorreia/health-postgres.git
+    path: helm/postgres
+    targetRevision: main
+    helm:
+      chart: postgresql
+      repo: https://charts.bitnami.com/bitnami
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: datacluster
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
