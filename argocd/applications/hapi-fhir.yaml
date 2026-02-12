@@ -6,7 +6,7 @@ metadata:
 spec:
   project: health
   source:
-    repoURL: git@github.com:lilianasacorreia/health-hapi-fhir.git
+    repoURL: https://github.com/lilianasacorreia/health-fhir-processor.git
     path: helm/hapi-fhir
     targetRevision: main
   destination:
