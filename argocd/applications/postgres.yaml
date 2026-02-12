@@ -6,12 +6,10 @@ metadata:
 spec:
   project: health
   source:
-    repoURL: git@github.com:lilianasacorreia/health-postgres.git
-    path: helm/postgres
-    targetRevision: main
+    repoURL: https://charts.bitnami.com/bitnami
+    chart: postgresql
+    targetRevision: 15.5.6   # versão estável
     helm:
-      chart: postgresql
-      repo: https://charts.bitnami.com/bitnami
       valueFiles:
         - values.yaml
   destination:
