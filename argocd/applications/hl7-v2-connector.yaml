@@ -6,7 +6,7 @@ metadata:
 spec:
   project: health
   source:
-    repoURL: https://github.com/lilianasacorreia/health-fhir-processor.git
+    repoURL: https://github.com/lilianasacorreia/health-hl7v2-connector
     path: helm/hl7-v2-connector
     targetRevision: main
   destination:
