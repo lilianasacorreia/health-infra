@@ -14,9 +14,9 @@ spec:
     helm:
       values: |
         image:
-          registry: ghcr.io
+          registry: docker.io
           repository: bitnami/postgresql
-          tag: "17.0.0"
+          tag: "16"
 
   destination:
     server: https://kubernetes.default.svc
