@@ -6,14 +6,17 @@ metadata:
 spec:
   project: health
   source:
-    repoURL: https://github.com/<org>/<health-redpanda>.git
-    chart: helm/redpanda
-    targetRevision: main   # versão estável
+    repoURL: https://charts.redpanda.com
+    chart: redpanda
+    targetRevision: 5.8.12   # versão estável
     helm:
       valueFiles:
         - values.yaml
       values:
       # opcional: podes remover se usas só o values.yaml do teu repo
+    values: |
+      statefulset:
+        replicas: 1
   destination:
     server: https://kubernetes.default.svc
     namespace: datacluster
