@@ -10,13 +10,12 @@ spec:
     chart: redpanda
     targetRevision: 5.8.12   # versão estável
     helm:
+      values: |
+        statefulset:
+          replicas: 1
       valueFiles:
         - values.yaml
-      values:
-      # opcional: podes remover se usas só o values.yaml do teu repo
-    values: |
-      statefulset:
-        replicas: 1
+
   destination:
     server: https://kubernetes.default.svc
     namespace: datacluster
