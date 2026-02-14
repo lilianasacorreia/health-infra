@@ -10,7 +10,7 @@ spec:
     chart: redpanda
     targetRevision: 5.8.12   # versão estável
     helm:
-      values: |
+      values:
         statefulset:
           replicas: 1
       valueFiles:
