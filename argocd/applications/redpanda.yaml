@@ -3,22 +3,23 @@ kind: Application
 metadata:
   name: redpanda
   namespace: argocd
+
 spec:
   project: health
+
   source:
     repoURL: https://charts.redpanda.com
     chart: redpanda
-    targetRevision: 5.8.12   # versão estável
+    targetRevision: 5.8.12
     helm:
       values: |
         statefulset:
           replicas: 1
-      valueFiles:
-        - values.yaml
 
   destination:
     server: https://kubernetes.default.svc
     namespace: datacluster
+
   syncPolicy:
     automated:
       prune: true
