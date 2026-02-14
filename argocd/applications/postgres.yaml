@@ -3,18 +3,23 @@ kind: Application
 metadata:
   name: postgres
   namespace: argocd
+
 spec:
   project: health
+
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: postgresql
-    targetRevision: 16.1.0    # versão estável
+    targetRevision: 16.1.0
     helm:
-      valueFiles:
-        - values.yaml
+      values: |
+        image:
+          tag: 17.0.0-debian-12
+
   destination:
     server: https://kubernetes.default.svc
     namespace: datacluster
+
   syncPolicy:
     automated:
       prune: true
