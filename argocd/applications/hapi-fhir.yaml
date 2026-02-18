@@ -9,9 +9,6 @@ spec:
     repoURL: https://github.com/lilianasacorreia/health-hapi-fhir
     targetRevision: main
     path: charts/hapi-fhir-jpaserver
-    helm:
-      valueFiles:
-        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: datacluster
