@@ -7,8 +7,11 @@ spec:
   project: health
   source:
     repoURL: https://github.com/lilianasacorreia/health-hapi-fhir
-    path: helm/hapi-fhir
     targetRevision: main
+    path: charts/hapi-fhir-jpaserver
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: datacluster
